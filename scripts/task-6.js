@@ -5,18 +5,16 @@ const validLength = input.dataset.length;
 
 function changeColor(event) {
   const currentLength = event.target.value.length;
-  if (currentLength <= validLength) {
+  if (currentLength === Number(validLength)) {
     input.classList.add('valid');
     input.classList.remove('invalid');
-  }
-
-  if (currentLength > validLength) {
+  } else {
     input.classList.remove('valid');
     input.classList.add('invalid');
   }
 
   if (currentLength === 0) {
-    input.classList.remove('valid');
+    input.classList.remove('invalid');
   }
 }
 
